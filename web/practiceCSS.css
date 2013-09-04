@@ -1,0 +1,13 @@
+/* 
+    Document   : practiceCSS
+    Created on : Sep 4, 2013, 5:42:02 PM
+    Author     : Chumples
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {background-color:#33ccff;}
+p {font-family:arial; color:greenyellow;}
+h2 {background-color:red; text-align:center;}
+textArea {color: red; background-color: lightyellow}
+

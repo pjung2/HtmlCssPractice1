@@ -1,0 +1,172 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INTERNAL CSS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+
+        <style type="text/css">
+            body {background-color:#33ccff;}
+            p {font-family:arial; color:greenyellow;}
+            h2 {background-color:red; text-align:center;}
+            textArea {color: red; background-color: lightyellow}
+        </style>
+
+        <script language="JavaScript">
+            function btnCount_onclick()
+            {
+//                var text_area_text = Put whatever you want in here;
+            }
+            function radYesNo_onclick(radIndex)
+            {
+                return 0;
+            }
+            function btnSubmit_onclick()
+            {
+                var text_value = "";
+                if (document.form1.firstName.value === "" && document.form1.lastName.value === "")
+                {
+                    alert("Apparently you don't have a name");
+                }
+                else if (document.form1.firstName.value !== "" && document.form1.lastName.value === "")
+                {
+                    text_value = text_value + document.form1.firstName.value;
+                    alert("Hello " + text_value);
+                }
+                else if (document.form1.firstName.value === "" && document.form1.lastName.value !== "")
+                {
+                    text_value = text_value + " " + document.form1.lastName.value;
+                    alert("Apparently you don't have a first name");
+                }
+                else
+                {
+                    text_value = text_value + document.form1.firstName.value + document.form1.lastName.value;
+                    alert("Hello " + text_value);
+                }
+
+                var checked_value = "";
+                for (var i = 0; i < document.form1.pet.length; i++)
+                {
+                    if (document.form1.pet[i].checked)
+                    {
+                        checked_value = checked_value + document.form1.pet[i].value + "\n";
+                    }
+                }
+                if (checked_value === "")
+                {
+                    alert("You don't own any pets :(");
+                }
+                else if (checked_value !== "")
+                {
+                    alert("You own a: " + "\n" + checked_value);
+                }
+
+                var radio_value = "";
+                for (var i = 0; i < document.form1.answer.length; i++)
+                {
+                    if (document.form1.answer[i].checked)
+                    {
+                        radio_value = "\n" + radio_value + document.form1.answer[i].value;
+                    }
+                }
+                alert("Do you like cows?" + "\n" + "you answered: " + radio_value);
+
+                var fruit_value = document.form1.ddFruit.value;
+                var veggie_value = document.form1.ddVeggie.value;
+                alert("You chose " + fruit_value + " & " + veggie_value + " from the drop down menus");
+
+                var text_area_text = "Goodbye " + text_value + ".";
+                document.form1.textArea1.value = text_area_text;
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form1">
+            <h2>
+                Please Complete the Following Form
+            </h2>
+            <p>
+                <br>
+                <br>
+                First name: <input type="text" value="" name="firstName">
+                <br>
+                <br>
+                Last name: <input type="text" value="" name="lastName">
+            </p>
+            <p>
+                Which pet(s) do you own?
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Dog</td>
+                        <td>
+                            <input type="checkbox" value="Dog" name="pet">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cat</td>
+                        <td>
+                            <input type="checkbox" value="Cat" name="pet">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fish</td>
+                        <td>
+                            <input type="checkbox" value="Fish" name="pet">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <p>
+            Do you like cows?
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="radio" value="Yes" checked="" name="answer">
+                    </td>
+                    <td>Yes</td>
+                    <td>
+                        <input type="radio" value="No" name="answer">
+                    </td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+    <p>
+        Please select a fruit
+        <select name="ddFruit">
+            <option value="Apple">Apple</option>
+            <option value="Orange">Orange</option>
+            <option value="Kiwi">Kiwi</option>
+        </select>
+    </p>
+    <p>
+        Please select a vegetable
+        <select name="ddVeggie">
+            <option value="Carrot">Carrot</option>
+            <option value="Potato">Potato</option>
+            <option value="Cucumber">Cucumber</option>
+        </select>
+    </p>
+    <input type="button" onclick="return btnSubmit_onclick();" name="btnSubmit" value="Submit">
+    </br>
+    </br>
+    <textarea id="textArea1" rows="4" cols="50">
+Hello
+    </textarea>
+    <br>
+    <br>
+    <input type="button" onclick="return btnCount_onclick();" name="btnCount" value="Count">
+    <textarea id="textArea2" rows="3" cols="5">
+
+    </textarea>
+</form>
+</body>
+</html>
